@@ -194,7 +194,7 @@ const Preview: FC = () => {
     const domain =
       process.env.NODE_ENV === 'development'
         ? location.hostname
-        : `otosaas.com`;
+        : `github.io`;
     document.domain = domain;
   }, []);
 
