@@ -5,8 +5,8 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  base: '/visual-design-iframe-preview/docs-dist/',
-  publicPath: '/visual-design-iframe-preview/docs-dist/',
+  base: '/visual-design-iframe-preview/dist/',
+  publicPath: '/visual-design-iframe-preview/dist/',
   routes: [{ path: '/', component: '@/pages/index' }],
   fastRefresh: {},
   chainWebpack(memo) {
