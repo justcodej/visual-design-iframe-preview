@@ -1,0 +1,1 @@
+export { attachPropertiesToComponent } from './common';

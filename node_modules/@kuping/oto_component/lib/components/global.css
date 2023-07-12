@@ -1,0 +1,9 @@
+:root:root {
+  --adm-button-border-radius: 8px;
+  --adm-color-weak: #858b9c;
+  --adm-color-primary: #1677ff;
+  --adm-color-danger: #ff3b30;
+}
+.__dumi-default-mobile-demo-layout {
+  background-color: var(--adm-color-box);
+}

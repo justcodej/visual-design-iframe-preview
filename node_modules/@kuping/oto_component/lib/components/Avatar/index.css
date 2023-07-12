@@ -1,0 +1,4 @@
+.adm-avatar {
+  --border-radius: 8px;
+  --size: var(--adm-avatar-size, 52px);
+}

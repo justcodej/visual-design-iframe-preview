@@ -1,0 +1,1673 @@
+{
+  "BrandGroup": {
+    "visible": true,
+    "name": "icon",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192350%E9%87%91%E5%88%9A%E5%8C%BA1%E5%A4%87%E4%BB%BD.png?path=0,392,411",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192355%E9%87%91%E5%88%9A%E5%8C%BA2%E5%A4%87%E4%BB%BD.png?path=0,392,412",
+    "data": {
+      "relationStyle": 2,
+      "backgroundColor": "#FFF6E7",
+      "color": "#111A34",
+      "dataSource": [
+        {
+          "name": "",
+          "imgUrl": "",
+          "pathUrl": "",
+          "iconLabel": ""
+        }
+      ]
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "relationStyle": {
+          "type": "number",
+          "title": "icon样式",
+          "x-decorator": "FormItem",
+          "x-component": "Radio.Group",
+          "x-component-props": {
+            "optionType": "button",
+            "buttonStyle": "solid"
+          },
+          "enum": [
+            {
+              "label": "56 X 56",
+              "value": 1
+            },
+            {
+              "label": "88 X 88",
+              "value": 2
+            },
+            {
+              "label": "100 X 100",
+              "value": 3
+            }
+          ]
+        },
+        "backgroundColor": {
+          "type": "string",
+          "title": "背景色",
+          "default": "#FFFFFF",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-component-props": {
+            "placeholder": "请输入背景色"
+          },
+          "x-validator": [
+            {
+              "required": true,
+              "triggerType": "onBlur"
+            }
+          ]
+        },
+        "color": {
+          "type": "string",
+          "title": "文字颜色",
+          "default": "#111A34",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-component-props": {
+            "placeholder": "请输入文字颜色"
+          },
+          "x-validator": [
+            {
+              "required": true,
+              "triggerType": "onBlur"
+            }
+          ]
+        },
+        "dataSource": {
+          "type": "array",
+          "x-decorator": "FormItem",
+          "x-component": "ArrayCards",
+          "maxItems": 100,
+          "minItems": 5,
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "void",
+                "x-component": "ArrayCards.Index"
+              },
+              "name": {
+                "type": "string",
+                "title": "icon名称",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入icon名称",
+                  "maxLength": 4,
+                  "showCount": true
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "imgUrl": {
+                "type": "string",
+                "title": "图片",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "FileManage",
+                "x-component-props": {
+                  "upload": "/api/v1/material/material/upload",
+                  "save": "/api/v1/material/material/save",
+                  "query": "/api/v1/material/material/query",
+                  "update": "/api/v1/material/material/update"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "pathUrl": {
+                "type": "string",
+                "title": "跳转链接",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入跳转链接"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "iconLabel": {
+                "type": "string",
+                "title": "icon标签",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入icon标签",
+                  "maxLength": 4,
+                  "showCount": true
+                },
+                "x-validator": [
+                  {
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "remove": {
+                "type": "void",
+                "x-component": "ArrayCards.Remove"
+              },
+              "moveUp": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveUp"
+              },
+              "moveDown": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveDown"
+              }
+            }
+          },
+          "properties": {
+            "addition": {
+              "type": "void",
+              "title": "添加条目",
+              "x-component": "ArrayCards.Addition"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Carousel": {
+    "visible": true,
+    "name": "轮播",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192402%E8%BD%AE%E6%92%AD%E5%9B%BE1%E5%A4%87%E4%BB%BD.png?path=0,392,413",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192408%E8%BD%AE%E6%92%AD%E5%9B%BE2%E5%A4%87%E4%BB%BD.png?path=0,392,414",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "dataSource": {
+          "type": "array",
+          "x-decorator": "FormItem",
+          "x-component": "ArrayCards",
+          "required": true,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "void",
+                "x-component": "ArrayCards.Index"
+              },
+              "name": {
+                "type": "string",
+                "title": "图片名称",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入图片名称",
+                  "maxLength": 4,
+                  "showCount": true
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "pathUrl": {
+                "type": "string",
+                "title": "跳转链接",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入跳转链接"
+                },
+                "x-validator": [
+                  {
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "imgUrl": {
+                "type": "string",
+                "title": "图片",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "FileManage",
+                "x-component-props": {
+                  "upload": "/api/v1/material/material/upload",
+                  "save": "/api/v1/material/material/save",
+                  "query": "/api/v1/material/material/query",
+                  "update": "/api/v1/material/material/update"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "remove": {
+                "type": "void",
+                "x-component": "ArrayCards.Remove"
+              },
+              "moveUp": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveUp"
+              },
+              "moveDown": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveDown"
+              }
+            }
+          },
+          "properties": {
+            "addition": {
+              "type": "void",
+              "title": "添加条目",
+              "x-component": "ArrayCards.Addition"
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "dataSource": [
+        {
+          "name": "",
+          "imgUrl": "",
+          "pathUrl": ""
+        }
+      ]
+    }
+  },
+  "FooterNav": {
+    "visible": true,
+    "name": "底部导航",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192329%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA1%E5%A4%87%E4%BB%BD.png?path=0,392,407",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192334%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA2%E5%A4%87%E4%BB%BD.png?path=0,392,408",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "backgroundImage": {
+          "type": "string",
+          "title": "背景图",
+          "x-decorator": "FormItem",
+          "x-decorator-props": {
+            "title": "组件样式",
+            "className": "mb-10"
+          },
+          "x-component": "FileManage",
+          "x-component-props": {
+            "upload": "/api/v1/material/material/upload",
+            "save": "/api/v1/material/material/save",
+            "query": "/api/v1/material/material/query",
+            "update": "/api/v1/material/material/update"
+          },
+          "x-validator": [
+            {
+              "triggerType": "onBlur"
+            }
+          ]
+        },
+        "color": {
+          "type": "string",
+          "title": "未选中文字颜色",
+          "x-decorator": "FormItem",
+          "default": "#858B9C",
+          "x-decorator-props": {
+            "labelCol": 6,
+            "wrapperCol": 18
+          },
+          "x-component": "Input",
+          "x-validator": [
+            {
+              "required": true,
+              "triggerType": "onBlur"
+            }
+          ]
+        },
+        "activeColor": {
+          "type": "string",
+          "title": "选中文字颜色",
+          "x-decorator": "FormItem",
+          "default": "#F93A4A",
+          "x-decorator-props": {
+            "labelCol": 6,
+            "wrapperCol": 18
+          },
+          "x-component": "Input",
+          "x-validator": [
+            {
+              "required": true,
+              "triggerType": "onBlur"
+            }
+          ]
+        },
+        "dataSource": {
+          "type": "array",
+          "x-decorator": "FormItem",
+          "x-component": "ArrayCards",
+          "maxItems": 5,
+          "required": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "void",
+                "x-component": "ArrayCards.Index"
+              },
+              "name": {
+                "type": "string",
+                "title": "导航名称",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入导航名称",
+                  "maxLength": 4,
+                  "showCount": true
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "pathUrl": {
+                "type": "string",
+                "title": "跳转链接",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入跳转链接"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "style": {
+                "type": "object",
+                "properties": {
+                  "backgroundImage": {
+                    "type": "string",
+                    "title": "未选中图片",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "FileManage",
+                    "x-component-props": {
+                      "upload": "/api/v1/material/material/upload",
+                      "save": "/api/v1/material/material/save",
+                      "query": "/api/v1/material/material/query",
+                      "update": "/api/v1/material/material/update"
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "format": "url",
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  }
+                }
+              },
+              "activeStyle": {
+                "type": "object",
+                "properties": {
+                  "backgroundImage": {
+                    "type": "string",
+                    "title": "选中图片",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "FileManage",
+                    "x-component-props": {
+                      "upload": "/api/v1/material/material/upload",
+                      "save": "/api/v1/material/material/save",
+                      "query": "/api/v1/material/material/query",
+                      "update": "/api/v1/material/material/update"
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "format": "url",
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  }
+                }
+              },
+              "remove": {
+                "type": "void",
+                "x-component": "ArrayCards.Remove"
+              },
+              "moveUp": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveUp"
+              },
+              "moveDown": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveDown"
+              }
+            }
+          },
+          "properties": {
+            "addition": {
+              "type": "void",
+              "title": "添加条目",
+              "x-component": "ArrayCards.Addition"
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "backgroundImage": "",
+      "color": "#858B9C",
+      "activeColor": "#F93A4A",
+      "dataSource": [
+        {
+          "name": "",
+          "pathUrl": "",
+          "style": {
+            "backgroundImage": ""
+          },
+          "activeStyle": {
+            "backgroundImage": ""
+          }
+        }
+      ]
+    }
+  },
+  "Marketing": {
+    "visible": true,
+    "name": "营销位",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192505%E8%90%A5%E9%94%80%E4%BD%8D1%E5%A4%87%E4%BB%BD.png?path=0,392,425",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192511%E8%90%A5%E9%94%80%E4%BD%8D2%E5%A4%87%E4%BB%BD.png?path=0,392,426",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "relationStyle": {
+          "type": "number",
+          "title": "样式",
+          "x-decorator": "FormItem",
+          "x-reactions": {
+            "target": "dataSource",
+            "fulfill": {
+              "schema": {
+                "maxItems": "{{$self.value === 1 ? 2 : ($self.value  === 2 || $self.value === 3) ? 3 : 4}}",
+                "minItems": "{{$self.value === 1 ? 2 : ($self.value  === 2 || $self.value === 3) ? 3 : 4}}"
+              }
+            }
+          },
+          "x-decorator-props": {
+            "title": "组件样式",
+            "className": "mb-10"
+          },
+          "enum": [
+            {
+              "label": "一行两个",
+              "value": 1
+            },
+            {
+              "label": "一行三个",
+              "value": 2
+            },
+            {
+              "label": "左一右二",
+              "value": 3
+            },
+            {
+              "label": "一行四个",
+              "value": 4
+            }
+          ],
+          "x-component": "Radio.Group",
+          "x-component-props": {
+            "optionType": "button",
+            "buttonStyle": "solid"
+          }
+        },
+        "dataSource": {
+          "type": "array",
+          "x-decorator": "FormItem",
+          "x-component": "ArrayCards",
+          "minItems": 2,
+          "required": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "void",
+                "x-component": "ArrayCards.Index"
+              },
+              "name": {
+                "type": "string",
+                "title": "图片名称",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入图片名称",
+                  "maxLength": 4,
+                  "showCount": true
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "pathUrl": {
+                "type": "string",
+                "title": "跳转链接",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入跳转链接"
+                },
+                "x-validator": [
+                  {
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "imgUrl": {
+                "type": "string",
+                "title": "图片",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "FileManage",
+                "x-component-props": {
+                  "upload": "/api/v1/material/material/upload",
+                  "save": "/api/v1/material/material/save",
+                  "query": "/api/v1/material/material/query",
+                  "update": "/api/v1/material/material/update"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "format": "url",
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "remove": {
+                "type": "void",
+                "x-component": "ArrayCards.Remove"
+              },
+              "moveUp": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveUp"
+              },
+              "moveDown": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveDown"
+              }
+            }
+          },
+          "properties": {
+            "addition": {
+              "type": "void",
+              "title": "添加条目",
+              "x-component": "ArrayCards.Addition"
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "relationStyle": 1,
+      "dataSource": [
+        {
+          "name": "",
+          "imgUrl": "",
+          "pathUrl": ""
+        }
+      ]
+    }
+  },
+  "Heading": {
+    "visible": true,
+    "name": "标题组件",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192316%E6%A0%87%E9%A2%98%E6%96%87%E6%9C%AC1%E5%A4%87%E4%BB%BD.png?path=0,392,405",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192324%E6%A0%87%E9%A2%98%E6%96%87%E6%9C%AC2%E5%A4%87%E4%BB%BD.png?path=0,392,406",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "dataSource": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "标题文案",
+              "x-decorator": "FormItem",
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入标题文案",
+                "maxLength": 4,
+                "showCount": true
+              },
+              "x-validator": [
+                {
+                  "required": true,
+                  "triggerType": "onBlur"
+                }
+              ]
+            },
+            "style": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "type": "string",
+                  "default": "#111A34",
+                  "title": "文字颜色",
+                  "x-decorator": "FormItem",
+                  "x-component": "Input",
+                  "x-component-props": {
+                    "placeholder": "请输入文字颜色"
+                  },
+                  "x-validator": [
+                    {
+                      "required": true,
+                      "triggerType": "onBlur"
+                    }
+                  ]
+                }
+              }
+            },
+            "iconLabel": {
+              "title": "副标题文案",
+              "x-decorator": "FormItem",
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入副标题文案",
+                "maxLength": 8,
+                "showCount": true
+              },
+              "x-validator": [
+                {
+                  "triggerType": "onBlur"
+                }
+              ]
+            },
+            "pathUrl": {
+              "title": "跳转链接",
+              "x-decorator": "FormItem",
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入副标题跳转链接"
+              },
+              "x-validator": [
+                {
+                  "triggerType": "onBlur"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "dataSource": {
+        "name": "",
+        "iconLabel": "",
+        "pathUrl": "",
+        "style": {
+          "color": "#111A34"
+        }
+      }
+    }
+  },
+  "LocalShopping": {
+    "visible": true,
+    "name": "附近商圈",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192340%E9%99%84%E8%BF%91%E5%BA%97%E9%93%BA1%E5%A4%87%E4%BB%BD.png?path=0,392,409",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192345%E9%99%84%E8%BF%91%E5%BA%97%E9%93%BA2%E5%A4%87%E4%BB%BD.png?path=0,392,410",
+    "schema": {}
+  },
+  "DailyDiscount": {
+    "visible": true,
+    "name": "每日特惠",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192425%E6%AF%8F%E6%97%A5%E7%89%B9%E6%83%A01%E5%A4%87%E4%BB%BD.png?path=0,392,417",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192429%E6%AF%8F%E6%97%A5%E7%89%B9%E6%83%A02%E5%A4%87%E4%BB%BD.png?path=0,392,418",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "relationStyle": {
+          "type": "number",
+          "title": "组件样式",
+          "enum": [
+            {
+              "label": "推荐数量3",
+              "value": 1
+            },
+            {
+              "label": "推荐数量4",
+              "value": 2
+            }
+          ],
+          "x-decorator": "FormItem",
+          "x-component": "Radio.Group",
+          "x-component-props": {
+            "optionType": "button",
+            "buttonStyle": "solid"
+          }
+        },
+        "dataSource": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "标题内容",
+              "x-decorator": "FormItem",
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入标题内容",
+                "maxLength": 6,
+                "showCount": true
+              },
+              "x-validator": [
+                {
+                  "triggerType": "onBlur"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "relationStyle": 2,
+      "dataSource": {
+        "name": "天天特惠"
+      }
+    }
+  },
+  "SearchInput": {
+    "visible": true,
+    "name": "定位",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192445%E5%95%86%E5%93%81%E6%90%9C%E7%B4%A21%E5%A4%87%E4%BB%BD.png?path=0,392,421",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192449%E5%95%86%E5%93%81%E6%90%9C%E7%B4%A22%E5%A4%87%E4%BB%BD.png?path=0,392,422",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "relationStyle": {
+          "type": "number",
+          "title": "组件样式",
+          "default": 1,
+          "enum": [
+            {
+              "label": "单定位",
+              "value": 1
+            },
+            {
+              "label": "定位 + 搜索",
+              "value": 2
+            },
+            {
+              "label": "定位 + 搜索 + 跳转",
+              "value": 3
+            }
+          ],
+          "x-decorator": "FormItem",
+          "x-component": "Radio.Group",
+          "x-component-props": {
+            "optionType": "button",
+            "buttonStyle": "solid"
+          },
+          "x-reactions": {
+            "target": "*(dataSource.pathUrl, dataSource.imgUrl)",
+            "fulfill": {
+              "schema": {
+                "x-display": "{{$self.value === 3 ? 'visible' : 'hidden'}}"
+              }
+            }
+          }
+        },
+        "dataSource": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "引导文案",
+              "x-decorator": "FormItem",
+              "x-decorator-props": {
+                "labelCol": 6,
+                "wrapperCol": 18
+              },
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入搜索栏引导文案",
+                "maxLength": 10,
+                "showCount": true
+              },
+              "x-validator": [
+                {
+                  "required": true,
+                  "triggerType": "onBlur"
+                }
+              ]
+            },
+            "pathUrl": {
+              "type": "string",
+              "title": "跳转链接",
+              "x-decorator": "FormItem",
+              "x-decorator-props": {
+                "labelCol": 6,
+                "wrapperCol": 18
+              },
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入跳转链接"
+              },
+              "x-validator": [
+                {
+                  "required": true,
+                  "format": "url",
+                  "triggerType": "onBlur"
+                }
+              ]
+            },
+            "imgUrl": {
+              "type": "string",
+              "title": "图片",
+              "x-decorator": "FormItem",
+              "x-decorator-props": {
+                "labelCol": 6,
+                "wrapperCol": 18
+              },
+              "x-component": "FileManage",
+              "x-component-props": {
+                "upload": "/api/v1/material/material/upload",
+                "save": "/api/v1/material/material/save",
+                "query": "/api/v1/material/material/query",
+                "update": "/api/v1/material/material/update"
+              },
+              "x-validator": [
+                {
+                  "required": true,
+                  "format": "url",
+                  "triggerType": "onBlur"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "relationStyle": 1,
+      "dataSource": {
+        "name": "",
+        "pathUrl": "",
+        "imgUrl": ""
+      }
+    }
+  },
+  "MasonryLayouts": {
+    "visible": true,
+    "name": "瀑布流",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192434%E7%80%91%E5%B8%83%E6%B5%811%E5%A4%87%E4%BB%BD.png?path=0,392,419",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192439%E7%80%91%E5%B8%83%E6%B5%812%E5%A4%87%E4%BB%BD.png?path=0,392,420",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "basicAttribute": {
+          "type": "object",
+          "x-decorator": "Card",
+          "x-decorator-props": {
+            "title": "基础属性",
+            "className": "mb-10"
+          },
+          "properties": {
+            "color": {
+              "type": "string",
+              "title": "未选文字颜色",
+              "x-decorator": "FormItem",
+              "default": "#41485D",
+              "x-component": "Input",
+              "x-component-props": {
+                "placeholder": "请输入未选文字颜色"
+              },
+              "x-validator": [
+                {
+                  "required": true,
+                  "triggerType": "onBlur"
+                }
+              ]
+            },
+            "relationStyle": {
+              "type": "number",
+              "title": "标题样式",
+              "default": 2,
+              "x-reactions": {
+                "target": "dataSource",
+                "fulfill": {
+                  "schema": {
+                    "maxItems": "{{$self.value === 0 ? 1 : 100}}"
+                  }
+                }
+              },
+              "enum": [
+                {
+                  "label": "单标题",
+                  "value": 1
+                },
+                {
+                  "label": "标题+副标题",
+                  "value": 2
+                },
+                {
+                  "label": "无标题单瀑布流",
+                  "value": 0
+                }
+              ],
+              "x-decorator": "FormItem",
+              "x-component": "Radio.Group",
+              "x-component-props": {
+                "optionType": "button",
+                "buttonStyle": "solid"
+              }
+            },
+            "activeLineStyle": {
+              "type": "object",
+              "properties": {
+                "backgroundColor": {
+                  "type": "string",
+                  "title": "选中效果颜色",
+                  "x-decorator": "FormItem",
+                  "x-component": "Input",
+                  "default": "#F93A4A",
+                  "x-component-props": {
+                    "placeholder": "请输入选中效果颜色"
+                  },
+                  "x-validator": [
+                    {
+                      "required": true,
+                      "triggerType": "onBlur"
+                    }
+                  ]
+                }
+              }
+            },
+            "stickyStyle": {
+              "type": "object",
+              "properties": {
+                "backgroundColor": {
+                  "type": "string",
+                  "title": "吸顶底部颜色",
+                  "default": "#FFFFFF",
+                  "x-decorator": "FormItem",
+                  "x-component": "Input",
+                  "x-component-props": {
+                    "placeholder": "请输入吸顶底部颜色"
+                  },
+                  "x-validator": [
+                    {
+                      "required": true,
+                      "triggerType": "onBlur"
+                    }
+                  ]
+                }
+              }
+            },
+            "activeStyle": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "type": "string",
+                  "title": "已选文字颜色",
+                  "x-decorator": "FormItem",
+                  "default": "#F93A4A",
+                  "x-component": "Input",
+                  "x-component-props": {
+                    "placeholder": "请输入已选文字颜色"
+                  },
+                  "x-validator": [
+                    {
+                      "required": true,
+                      "triggerType": "onBlur"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "dataSource": {
+          "type": "array",
+          "x-decorator": "FormItem",
+          "x-component": "ArrayCards",
+          "maxItems": 100,
+          "required": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "void",
+                "x-component": "ArrayCards.Index"
+              },
+              "name": {
+                "title": "瀑布流标题",
+                "type": "string",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入瀑布流标题",
+                  "maxLength": 4,
+                  "showCount": true
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "subtitle": {
+                "title": "瀑布流副标题",
+                "type": "string",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入瀑布流副标题"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "recommendType": {
+                "type": "number",
+                "title": "推荐类型",
+                "default": 4,
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Select",
+                "x-component-props": {
+                  "placeholder": "请选择推荐类型"
+                },
+                "enum": [
+                  { "label": "商品瀑布流", "value": 4 },
+                  { "label": "卡券瀑布流", "value": 5 },
+                  { "label": "景点瀑布流", "value": 6 },
+                  { "label": "商圈瀑布流", "value": 7 }
+                ],
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "recommendCode": {
+                "type": "string",
+                "title": "推荐ID",
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Input",
+                "x-component-props": {
+                  "placeholder": "请输入推荐ID"
+                },
+                "x-validator": [
+                  {
+                    "required": true,
+                    "triggerType": "onBlur"
+                  }
+                ]
+              },
+              "filter": {
+                "type": "number",
+                "default": 1,
+                "enum": [
+                  {
+                    "label": "展示筛选条件",
+                    "value": 1
+                  },
+                  {
+                    "label": "不展示筛选条件",
+                    "value": 0
+                  }
+                ],
+                "x-decorator": "FormItem",
+                "x-decorator-props": {
+                  "labelCol": 6,
+                  "wrapperCol": 18
+                },
+                "x-component": "Radio.Group",
+                "x-component-props": {
+                  "optionType": "button",
+                  "buttonStyle": "solid"
+                }
+              },
+              "remove": {
+                "type": "void",
+                "x-component": "ArrayCards.Remove"
+              },
+              "moveUp": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveUp"
+              },
+              "moveDown": {
+                "type": "void",
+                "x-component": "ArrayCards.MoveDown"
+              }
+            }
+          },
+          "properties": {
+            "addition": {
+              "type": "void",
+              "title": "添加条目",
+              "x-component": "ArrayCards.Addition"
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "basicAttribute": {
+        "color": "#41485D",
+        "relationStyle": 2,
+        "activeLineStyle": {
+          "backgroundColor": "#F93A4A"
+        },
+        "stickyStyle": {
+          "backgroundColor": "#FFFFFF"
+        },
+        "activeStyle": {
+          "color": "#F93A4A"
+        }
+      },
+      "dataSource": [
+        {
+          "filter": 1,
+          "subtitle": "",
+          "name": "",
+          "recommendType": 4
+        }
+      ]
+    }
+  },
+  "SearchInputAndIconsAndCarousel": {
+    "visible": true,
+    "name": "景深轮播",
+    "icon": "https://bosscdn.otosaas.com/test/20220727/20220727192415%E8%BD%AE%E6%92%AD%E7%BB%84%E5%90%881%E5%A4%87%E4%BB%BD.png?path=0,392,415",
+    "hoverIcon": "https://bosscdn.otosaas.com/test/20220727/20220727192419%E8%BD%AE%E6%92%AD%E7%BB%84%E5%90%882%E5%A4%87%E4%BB%BD.png?path=0,392,416",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "relationStyle": {
+          "type": "number",
+          "x-decorator": "Card",
+          "x-decorator-props": {
+            "title": "基础配置",
+            "className": "mb-10"
+          },
+          "x-reactions": {
+            "target": "dataSource.searchInput",
+            "fulfill": {
+              "schema": {
+                "x-display": "{{$self.value === 1 ? 'visible' : 'hidden'}}"
+              }
+            }
+          },
+          "enum": [
+            {
+              "label": "显示搜索",
+              "value": 1
+            },
+            {
+              "label": "不显示搜索",
+              "value": 0
+            }
+          ],
+          "x-component": "Radio.Group",
+          "x-component-props": {
+            "optionType": "button",
+            "buttonStyle": "solid"
+          }
+        },
+        "dataSource": {
+          "type": "object",
+          "properties": {
+            "searchInput": {
+              "type": "object",
+              "x-decorator": "Card",
+              "x-decorator-props": {
+                "title": "搜索配置",
+                "className": "mb-10"
+              },
+              "properties": {
+                "relationStyle": {
+                  "type": "number",
+                  "title": "组件样式",
+                  "x-reactions": {
+                    "target": "*(dataSource.searchInput.dataSource.pathUrl, dataSource.searchInput.dataSource.imgUrl)",
+                    "fulfill": {
+                      "schema": {
+                        "x-display": "{{$self.value === 3 ? 'visible' : 'hidden'}}"
+                      }
+                    }
+                  },
+                  "enum": [
+                    {
+                      "label": "单定位",
+                      "value": 1
+                    },
+                    {
+                      "label": "定位 + 搜索",
+                      "value": 2
+                    },
+                    {
+                      "label": "定位 + 搜索 + 跳转",
+                      "value": 3
+                    }
+                  ],
+                  "x-decorator": "FormItem",
+                  "x-component": "Radio.Group",
+                  "x-component-props": {
+                    "optionType": "button",
+                    "buttonStyle": "solid"
+                  }
+                },
+                "dataSource": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "引导文案",
+                      "x-decorator": "FormItem",
+                      "x-component": "Input",
+                      "x-component-props": {
+                        "placeholder": "请输入搜索栏引导文案",
+                        "maxLength": 10,
+                        "showCount": true
+                      },
+                      "x-validator": [
+                        {
+                          "required": true,
+                          "triggerType": "onBlur"
+                        }
+                      ]
+                    },
+                    "pathUrl": {
+                      "type": "string",
+                      "title": "跳转链接",
+                      "x-decorator": "FormItem",
+                      "x-decorator-props": {
+                        "labelCol": 6,
+                        "wrapperCol": 18
+                      },
+                      "x-component": "Input",
+                      "x-component-props": {
+                        "placeholder": "请输入icon跳转链接"
+                      },
+                      "x-validator": [
+                        {
+                          "required": true,
+                          "format": "url",
+                          "triggerType": "onBlur"
+                        }
+                      ]
+                    },
+                    "imgUrl": {
+                      "type": "string",
+                      "title": "图片",
+                      "default": "",
+                      "x-decorator": "FormItem",
+                      "x-decorator-props": {
+                        "labelCol": 6,
+                        "wrapperCol": 18
+                      },
+                      "x-component": "FileManage",
+                      "x-component-props": {
+                        "upload": "/api/v1/material/material/upload",
+                        "save": "/api/v1/material/material/save",
+                        "query": "/api/v1/material/material/query",
+                        "update": "/api/v1/material/material/update"
+                      },
+                      "x-validator": [
+                        {
+                          "required": true,
+                          "format": "url",
+                          "triggerType": "onBlur"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "swiper": {
+              "type": "array",
+              "x-decorator": "FormItem",
+              "x-component": "ArrayCards",
+              "maxItems": 8,
+              "required": true,
+              "x-component-props": {
+                "title": "轮播列表"
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "void",
+                    "x-component": "ArrayCards.Index"
+                  },
+                  "name": {
+                    "type": "string",
+                    "title": "图片名称",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "Input",
+                    "x-component-props": {
+                      "placeholder": "请输入图片名称",
+                      "maxLength": 4,
+                      "showCount": true
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "pathUrl": {
+                    "type": "string",
+                    "title": "跳转链接",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "Input",
+                    "x-component-props": {
+                      "placeholder": "请输入跳转链接"
+                    },
+                    "x-validator": [
+                      {
+                        "format": "url",
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "imgUrl": {
+                    "type": "string",
+                    "title": "图片",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "FileManage",
+                    "x-component-props": {
+                      "upload": "/api/v1/material/material/upload",
+                      "save": "/api/v1/material/material/save",
+                      "query": "/api/v1/material/material/query",
+                      "update": "/api/v1/material/material/update"
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "format": "url",
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "remove": {
+                    "type": "void",
+                    "x-component": "ArrayCards.Remove"
+                  },
+                  "moveUp": {
+                    "type": "void",
+                    "x-component": "ArrayCards.MoveUp"
+                  },
+                  "moveDown": {
+                    "type": "void",
+                    "x-component": "ArrayCards.MoveDown"
+                  }
+                }
+              },
+              "properties": {
+                "addition": {
+                  "type": "void",
+                  "title": "添加条目",
+                  "x-component": "ArrayCards.Addition"
+                }
+              }
+            },
+            "icons": {
+              "type": "array",
+              "x-decorator": "FormItem",
+              "x-component": "ArrayCards",
+              "maxItems": 5,
+              "minItems": 4,
+              "x-component-props": {
+                "title": "图标列表"
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "void",
+                    "x-component": "ArrayCards.Index"
+                  },
+                  "name": {
+                    "type": "string",
+                    "title": "icon名称",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "Input",
+                    "x-component-props": {
+                      "placeholder": "请输入icon名称",
+                      "maxLength": 4,
+                      "showCount": true
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "iconLabel": {
+                    "type": "string",
+                    "title": "icon标签",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "Input",
+                    "x-component-props": {
+                      "placeholder": "请输入icon标签",
+                      "maxLength": 4,
+                      "showCount": true
+                    },
+                    "x-validator": [
+                      {
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "pathUrl": {
+                    "type": "string",
+                    "title": "跳转链接",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "Input",
+                    "x-component-props": {
+                      "placeholder": "请输入icon跳转链接"
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "format": "url",
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "imgUrl": {
+                    "type": "string",
+                    "title": "图片",
+                    "x-decorator": "FormItem",
+                    "x-decorator-props": {
+                      "labelCol": 6,
+                      "wrapperCol": 18
+                    },
+                    "x-component": "FileManage",
+                    "x-component-props": {
+                      "upload": "/api/v1/material/material/upload",
+                      "save": "/api/v1/material/material/save",
+                      "query": "/api/v1/material/material/query",
+                      "update": "/api/v1/material/material/update"
+                    },
+                    "x-validator": [
+                      {
+                        "required": true,
+                        "format": "url",
+                        "triggerType": "onBlur"
+                      }
+                    ]
+                  },
+                  "remove": {
+                    "type": "void",
+                    "x-component": "ArrayCards.Remove"
+                  },
+                  "moveUp": {
+                    "type": "void",
+                    "x-component": "ArrayCards.MoveUp"
+                  },
+                  "moveDown": {
+                    "type": "void",
+                    "x-component": "ArrayCards.MoveDown"
+                  }
+                }
+              },
+              "properties": {
+                "addition": {
+                  "type": "void",
+                  "title": "添加条目",
+                  "x-component": "ArrayCards.Addition"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "relationStyle": 1,
+      "dataSource": {
+        "searchInput": {
+          "relationStyle": 2,
+          "name": "",
+          "dataSource": {
+            "pathUrl": "",
+            "imgUrl": ""
+          }
+        },
+        "swiper": [
+          {
+            "name": "",
+            "imgUrl": "",
+            "pathUrl": ""
+          }
+        ],
+        "icons": [
+          {
+            "name": "",
+            "imgUrl": "",
+            "pathUrl": ""
+          }
+        ]
+      }
+    }
+  }
+}
